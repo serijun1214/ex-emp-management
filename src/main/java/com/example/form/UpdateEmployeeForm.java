@@ -7,7 +7,7 @@ public class UpdateEmployeeForm {
   // 従業員 ID
   private String id;
   // 扶養人数
-  private String name;
+  private String dependentsCount;
 
   public String getId() {
     return id;
@@ -17,16 +17,17 @@ public class UpdateEmployeeForm {
     this.id = id;
   }
 
-  public String getName() {
-    return name;
+  public String getDependentsCount() {
+    return dependentsCount;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setDependentsCount(String dependentsCount) {
+    this.dependentsCount = dependentsCount;
   }
 
   @Override
   public String toString() {
-    return "UpdateEmployeeForm [id=" + id + ", name=" + name + "]";
+    return "UpdateEmployeeForm [id=" + id + ", dependentsCount=" + dependentsCount + "]";
   }
+
 }
