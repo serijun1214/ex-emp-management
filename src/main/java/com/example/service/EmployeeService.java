@@ -22,9 +22,19 @@ public class EmployeeService {
 
   /**
    * 従業員情報を全件取得する
+   * 
    * @return 従業員情報リスト
    */
   public List<Employee> showList() {
     return employeeRepository.findAll();
+  }
+
+  /**
+   * 従業員情報を取得する
+   * @param id 従業員ID
+   * @return 従業員情報
+   */
+  public Employee showDetail(Integer id) {
+    return employeeRepository.load(id);
   }
 }
