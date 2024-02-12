@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 import com.example.domain.Administrator;
 
 /**
- * 管理者情報を操作するリポジトリ.
+ * administeratorsテーブルを操作するリポジトリ(Dao)
  */
 @Repository
 public class AdministratorRepository {
@@ -33,7 +33,6 @@ public class AdministratorRepository {
 
   /**
    * 管理者情報を挿入する
-   * 
    * @param administrator 管理者情報
    */
 
@@ -52,8 +51,7 @@ public class AdministratorRepository {
   }
 
   /**
-   * 管理者情報を取得する
-   * 
+   * メールアドレスとパスワードから管理者情報を取得する
    * @param maillAddress メールアドレス
    * @param password     パスワード
    * @return Administrator 管理者情報

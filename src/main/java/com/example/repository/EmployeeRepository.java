@@ -14,7 +14,7 @@ import org.springframework.stereotype.Repository;
 import com.example.domain.Employee;
 
 /**
- * 従業員情報を操作するリポジトリ.
+ * employeesテーブルを操作するリポジトリ(Dao)
  */
 @Repository
 public class EmployeeRepository {
@@ -42,8 +42,7 @@ public class EmployeeRepository {
   };
 
   /**
-   * 従業員情報を全件取得する
-   * 
+   * 従業員一覧情報を入社日順(降順)で取得する
    * @return 従業員情報のリスト
    */
   public List<Employee> findAll() {
@@ -73,7 +72,7 @@ public class EmployeeRepository {
   }
 
   /**
-   * 従業員情報を1件取得する
+   * 主キーから従業員情報を取得する
    * 
    * @param id ID
    * @return 従業員情報

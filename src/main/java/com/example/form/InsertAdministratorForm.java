@@ -1,29 +1,15 @@
-package com.example.domain;
+package com.example.form;
 
 /**
- * 管理者情報を表すドメイン
+ * 管理者情報登録時に使用するフォーム
  */
-public class Administrator {
-  // ID
-  private Integer id;
+public class InsertAdministratorForm {
   // 名前
   private String name;
   // メールアドレス
   private String mailAddress;
   // パスワード
   private String password;
-
-  // コンストラクタ
-  public Administrator() {
-  }
-
-  public Integer getId() {
-    return id;
-  }
-
-  public void setId(Integer id) {
-    this.id = id;
-  }
 
   public String getName() {
     return name;
@@ -51,7 +37,6 @@ public class Administrator {
 
   @Override
   public String toString() {
-    return "Administrator [id=" + id + ", name=" + name + ", mailAddress=" + mailAddress + ", password=" + password
-        + "]";
+    return "InsertAdministratorForm [name=" + name + ", mailAddress=" + mailAddress + ", password=" + password + "]";
   }
 }
