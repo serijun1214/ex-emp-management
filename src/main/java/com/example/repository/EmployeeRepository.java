@@ -19,7 +19,7 @@ import com.example.domain.Employee;
 @Repository
 public class EmployeeRepository {
 
-  // NamedParameterJdbcTemplateをDIする
+  // NamedParameterJdbcTemplateをDI
   @Autowired
   NamedParameterJdbcTemplate template;
 
@@ -42,7 +42,7 @@ public class EmployeeRepository {
   };
 
   /**
-   * 従業員一覧情報を入社日順(降順)で取得する
+   * 従業員一覧情報を入社日順(降順)で取得
    * @return 従業員情報のリスト
    */
   public List<Employee> findAll() {
@@ -72,7 +72,7 @@ public class EmployeeRepository {
   }
 
   /**
-   * 主キーから従業員情報を取得する
+   * 主キーから従業員情報を取得
    * 
    * @param id ID
    * @return 従業員情報
@@ -112,7 +112,7 @@ public class EmployeeRepository {
   }
 
   /**
-   * 従業員情報を変更する
+   * 従業員情報を変更
    * @param employee 変更したい従業員情報
    */
   public void update(Employee employee) {

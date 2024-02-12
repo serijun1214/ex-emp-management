@@ -17,7 +17,7 @@ import com.example.domain.Administrator;
 @Repository
 public class AdministratorRepository {
 
-  // NamedParameterJdbcTemplateをDIする
+  // NamedParameterJdbcTemplateをDI
   @Autowired
   NamedParameterJdbcTemplate template;
 
@@ -32,7 +32,7 @@ public class AdministratorRepository {
   };
 
   /**
-   * 管理者情報を挿入する
+   * 管理者情報を挿入
    * @param administrator 管理者情報
    */
 
@@ -51,7 +51,7 @@ public class AdministratorRepository {
   }
 
   /**
-   * メールアドレスとパスワードから管理者情報を取得する
+   * メールアドレスとパスワードから管理者情報を取得
    * @param maillAddress メールアドレス
    * @param password     パスワード
    * @return Administrator 管理者情報

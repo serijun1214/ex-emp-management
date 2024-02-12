@@ -16,12 +16,12 @@ import com.example.repository.EmployeeRepository;
 @Transactional
 public class EmployeeService {
 
-  // EmployeeRepositoryをDIする
+  // EmployeeRepositoryをDI
   @Autowired
   private EmployeeRepository employeeRepository;
 
   /**
-   * 従業員情報を全件取得する
+   * 従業員情報を全件取得
    * 
    * @return 従業員情報リスト
    */
@@ -30,7 +30,7 @@ public class EmployeeService {
   }
 
   /**
-   * 従業員情報を取得する
+   * 従業員情報を取得
    * @param id 従業員ID
    * @return 従業員情報
    */
@@ -39,7 +39,7 @@ public class EmployeeService {
   }
 
   /**
-   * 従業員情報を更新する
+   * 従業員情報を更新
    * @param employee 従業員情報
    */
   public void update(Employee employee) {

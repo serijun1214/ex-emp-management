@@ -13,12 +13,12 @@ import com.example.repository.AdministratorRepository;
 @Transactional
 public class AdministratorService {
   
-  // AdministratorRepositoryをDIする
+  // AdministratorRepositoryをDI
   @Autowired
   private AdministratorRepository administratorRepository;
 
   /**
-   * 管理者情報を挿入する
+   * 管理者情報を挿入
    * @param administrator 管理者情報
    */
   public void insert(Administrator administrator) {
@@ -26,7 +26,7 @@ public class AdministratorService {
   }
 
   /**
-   * ログイン処理をする
+   * ログイン処理
    * @param mailAddress
    * @param password
    * @return 管理者情報
