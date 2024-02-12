@@ -9,5 +9,4 @@ public class ExEmpManagementApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ExEmpManagementApplication.class, args);
 	}
-
 }

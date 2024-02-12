@@ -4,6 +4,8 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,21 +34,29 @@ public class AdministratorController {
 
   /**
    * 管理者情報を挿入するフォームを表示
+   * 
    * @param form
    * @return 管理者情報を挿入するフォーム画面
    */
   @GetMapping("/toInsert")
-  public String toInsert(InsertAdministratorForm form) {
+  public String toInsert(Model model, InsertAdministratorForm form) {
     return "administrator/insert";
   }
 
   /**
    * 管理者情報を挿入
+   * 
    * @param form 挿入する管理者情報
    * @return ログイン画面
    */
   @PostMapping("/insert")
-  public String insert(InsertAdministratorForm form) {
+  public String insert(@Validated InsertAdministratorForm form, BindingResult result, Model model) {
+
+    // もしエラーがあった場合は入力画面に遷移
+    if (result.hasErrors()) {
+      // 管理者情報を挿入するフォーム画面へ戻る
+      return toInsert(model,form);
+    }
     Administrator administrator = new Administrator();
     BeanUtils.copyProperties(form, administrator);
     administratorService.insert(administrator);
@@ -55,18 +65,20 @@ public class AdministratorController {
 
   /**
    * ログイン画面を表示
+   * 
    * @param form
    * @return ログイン画面
    */
   @GetMapping("/")
-  public String toLogin (LoginForm form) {
+  public String toLogin(LoginForm form) {
     return "administrator/login";
   }
 
   /**
    * ログイン処理
-   * @param form ログイン情報
-   * @param model 
+   * 
+   * @param form  ログイン情報
+   * @param model
    * @return 従業員情報一覧画面
    */
   @PostMapping("/login")
@@ -82,6 +94,7 @@ public class AdministratorController {
 
   /**
    * ログアウト処理
+   * 
    * @param form
    * @return ログイン画面
    */
