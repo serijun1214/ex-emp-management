@@ -167,14 +167,13 @@
                         style="color: red"
                         for="dependentsCount"
                       ></label>
-                      <input type="hidden" name="id" th:value="${employee.id}"/>
+                      <input type="hidden" name="id" th:value="${employee.id}">
                       <input
                         type="text"
                         name="dependentsCount"
                         id="dependentsCount"
                         class="form-control"
-                        value="3"
-                        th:text="${employee.dependentsCount}"
+                        th:value="${employee.dependentsCount}"
                       />
                     </td>
                   </tr>
